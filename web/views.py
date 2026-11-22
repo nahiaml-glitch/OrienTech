@@ -50,24 +50,16 @@ def contacto(request):
         nombre = request.POST.get('name')
         correo = request.POST.get('email')
         necesidades = request.POST.get('needs')
-# 1. Guarda el registro en /admin/
+
+        # Guarda en /admin/ al instante
         SolicitudContacto.objects.create(
             nombre=nombre,
             email=correo,
             necesidades=necesidades
         )
 
-        # 2. Envía el correo a tu bandeja de entrada
-        asunto = f"Nueva solicitud en OrienTech de {nombre}"
-        mensaje = f"Nombre: {nombre}\nCorreo del usuario: {correo}\n\nNecesidades:\n{necesidades}"
-
-        send_mail(
-            asunto,
-            mensaje,
-            settings.EMAIL_HOST_USER,
-            [settings.EMAIL_HOST_USER], # Te lo envía a tu propio correo
-            fail_silently=True,
-        )
+        # Imprime en los Logs de Render como respaldo permanente
+        print(f"NUEVO FORMULARIO -> Nombre: {nombre} | Email: {correo} | Necesidades: {necesidades}")
 
         enviado = True
 
