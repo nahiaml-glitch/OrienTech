@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import SolicitudContacto  # Añade esta línea arriba
+from django.core.mail import send_mail  # Añade esta línea
+from django.conf import settings        # Añade esta línea
+
 def home(request):
     """Página principal"""
     context = {
@@ -47,13 +50,25 @@ def contacto(request):
         nombre = request.POST.get('name')
         correo = request.POST.get('email')
         necesidades = request.POST.get('needs')
-
-        # Guarda el registro en la base de datos
+# 1. Guarda el registro en /admin/
         SolicitudContacto.objects.create(
             nombre=nombre,
             email=correo,
             necesidades=necesidades
         )
+
+        # 2. Envía el correo a tu bandeja de entrada
+        asunto = f"Nueva solicitud en OrienTech de {nombre}"
+        mensaje = f"Nombre: {nombre}\nCorreo del usuario: {correo}\n\nNecesidades:\n{necesidades}"
+
+        send_mail(
+            asunto,
+            mensaje,
+            settings.EMAIL_HOST_USER,
+            [settings.EMAIL_HOST_USER], # Te lo envía a tu propio correo
+            fail_silently=True,
+        )
+
         enviado = True
 
     return render(request, 'contacto.html', {'enviado': enviado})
