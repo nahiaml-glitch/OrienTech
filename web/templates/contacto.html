@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<!-- Script de Traducciones Automáticas -->
+<!-- Script de Traducciones Automáticas y Envío a Formspree -->
 <script>
   const dict = {
     en: {
@@ -112,5 +112,27 @@
     document.getElementById('btn-submit').innerText = dict[lang].submit;
     document.getElementById('needs').placeholder = dict[lang].placeholder;
   }
+
+  // Envío doble: primero a Formspree (correo) y luego a Django (/admin/)
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const btn = document.getElementById('btn-submit');
+    btn.disabled = true;
+    btn.innerText = 'Sending...';
+
+    const formData = new FormData();
+    formData.append('name', document.getElementById('name').value);
+    formData.append('email', document.getElementById('email').value);
+    formData.append('message', document.getElementById('needs').value);
+
+    fetch('https://formspree.io/f/xaeopzoa', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).finally(() => {
+      form.submit();
+    });
+  });
 </script>
 {% endblock %}
