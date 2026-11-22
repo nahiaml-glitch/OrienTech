@@ -42,4 +42,17 @@ def plantilla4(request):
     return render(request, 'plantilla4.html', context)
 
 def contacto(request):
-    return render(request, 'contacto.html')
+    enviado = False
+    if request.method == 'POST':
+        nombre = request.POST.get('name')
+        correo = request.POST.get('email')
+        necesidades = request.POST.get('needs')
+        
+        print("=========================================")
+        print(f"NUEVA SOLICITUD DE: {nombre} ({correo})")
+        print(f"NECESIDADES: {necesidades}")
+        print("=========================================")
+        
+        enviado = True
+
+    return render(request, 'contacto.html', {'enviado': enviado})
