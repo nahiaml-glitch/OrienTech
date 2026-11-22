@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="background-color: #f4eee9; min-height: 100vh; padding: 60px 20px 80px 20px; font-family: system-ui, -apple-system, sans-serif;">
+  
+  <!-- Contenedor Blanco (Estilo Tarjeta Editorial) -->
+  <div style="max-width: 900px; margin: 0 auto; background-color: #ffffff; padding: 50px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    
+    <!-- HEADER -->
+    <p style="color: #9c7161; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">
+      Human-Centered Design & Viability
+    </p>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1e1917; margin: 0 0 15px 0;">
+      User Impact & Academic Feasibility
+    </h1>
+    <p style="font-size: 1.1rem; color: #5a4f47; margin-bottom: 35px; font-style: italic;">
+      Balancing high social value for visually impaired users with practical, rapid prototyping within the academic year.
+    </p>
+
+
+    <!-- SECCIÓN 1: END-USER VALUE -->
+    <div style="margin-bottom: 40px;">
+      <p style="color: #9c7161; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin: 0 0 5px 0;">End-User Value</p>
+      <h3 style="color: #1e1917; font-size: 1.6rem; font-family: 'Playfair Display', serif; margin: 0 0 15px 0;">Designed for Dignity & Autonomy</h3>
+      <p style="color: #3c3430; line-height: 1.7; margin-bottom: 20px;">
+        Visually impaired users require intuitive, non-intrusive mobility aids that enhance natural perception rather than adding cognitive overload.
+      </p>
+      
+      <div style="background-color: #eedccc; padding: 25px; border-radius: 12px;">
+        <ul style="color: #3c3430; line-height: 1.7; margin: 0; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong style="color: #1e1917;">Preserves Auditory Awareness:</strong> Tactile vibration alerts on the handle communicate danger discreetly without masking vital street sounds.</li>
+          <li style="margin-bottom: 12px;"><strong style="color: #1e1917;">Psychological Confidence:</strong> Knowing upper-body space is actively monitored reduces anxiety and encourages independent urban travel.</li>
+          <li><strong style="color: #1e1917;">Ergonomic Balance:</strong> Custom additive-manufactured grip houses battery and circuitry without straining the wrist.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: PROJECT VIABILITY -->
+    <div>
+      <p style="color: #9c7161; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin: 0 0 5px 0;">Project Viability</p>
+      <h3 style="color: #1e1917; font-size: 1.6rem; font-family: 'Playfair Display', serif; margin: 0 0 15px 0;">Feasibility Within the Academic Course</h3>
+      <p style="color: #3c3430; line-height: 1.7; margin-bottom: 20px;">
+        This proposal was selected over alternative concepts due to its optimal balance between technological depth and realistic implementation timelines.
+      </p>
+      
+      <div style="background-color: #eedccc; padding: 25px; border-radius: 12px;">
+        <ul style="color: #3c3430; line-height: 1.7; margin: 0; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong style="color: #1e1917;">Accessible Hardware Stack:</strong> Relies on reliable, cost-effective components (Arduino microcontrollers, HC-SR04 ultrasonic sensors, coin vibration motors).</li>
+          <li style="margin-bottom: 12px;"><strong style="color: #1e1917;">Rapid C++ Iteration:</strong> Modular firmware allows immediate calibration of detection thresholds and haptic patterns during field testing.</li>
+          <li><strong style="color: #1e1917;">In-House Prototyping:</strong> 3D printing enables fast mechanical revisions without expensive external tooling.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

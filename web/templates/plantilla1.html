@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="background-color: #f4eee9; min-height: 100vh; padding: 60px 20px 80px 20px; font-family: system-ui, -apple-system, sans-serif;">
+  
+  <div style="max-width: 900px; margin: 0 auto; background-color: #ffffff; padding: 50px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    
+    <!-- HEADER SECTION -->
+    <p style="color: #9c7161; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;">
+      Problem Statement & Public Health
+    </p>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1e1917; margin: 0 0 15px 0;">
+      Relevance of the Need
+    </h1>
+    <p style="font-size: 1.1rem; color: #5a4f47; margin-bottom: 40px; font-style: italic;">
+      Addressing the critical upper-body safety gap in daily urban navigation for individuals with severe visual impairments.
+    </p>
+
+    <!-- CONTENT SECTION 1 -->
+    <h3 style="color: #1e1917; font-size: 1.4rem; margin-bottom: 15px;">A Global Public Health Priority</h3>
+    <p style="color: #3c3430; line-height: 1.7; margin-bottom: 15px;">
+      According to the <strong>World Health Organization (WHO)</strong>, at least 2.2 billion people worldwide experience near or distance vision impairment, with approximately 43 million individuals living with total blindness.
+    </p>
+    <p style="color: #3c3430; line-height: 1.7; margin-bottom: 30px;">
+      While the traditional white cane remains an indispensable tool for detecting ground-level hazards such as curbs, steps, and surface irregularities, its physical reach is restricted to floor level. Consequently, users remain exposed to severe upper-body and head collisions.
+    </p>
+
+    <!-- BULLET POINTS -->
+    <div style="background-color: #eedccc; padding: 25px; border-radius: 12px; margin-bottom: 40px;">
+      <h4 style="color: #9c7161; margin-top: 0; font-size: 1.1rem; margin-bottom: 15px;">Common Unprotected Urban Hazards</h4>
+      <ul style="color: #3c3430; line-height: 1.7; margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 10px;">Low-hanging tree branches encroaching on pedestrian sidewalks</li>
+        <li style="margin-bottom: 10px;">Wall-mounted street signs, commercial awnings, and scaffolding</li>
+        <li>Open vehicle tailgates, truck side-mirrors, and ground-level open windows</li>
+      </ul>
+    </div>
+
+    <!-- IMAGE (Placeholder setup for the cane image) -->
+    <div style="margin-bottom: 50px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <!-- Cambia 'cane_image.jpg' por el nombre real de tu imagen si la tienes en la carpeta img -->
+      <img src="{% static 'img/urban-navigation.jpg' %}" alt="Visually impaired person using a white cane" style="width: 100%; height: auto; display: block; object-fit: cover;">
+    </div>
+
+    <!-- TABLE SECTION -->
+    <h3 style="color: #1e1917; font-size: 1.4rem; margin-bottom: 20px;">Comparative Mobility Assessment</h3>
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; color: #3c3430;">
+        <thead>
+          <tr style="border-bottom: 2px solid #c85a47;">
+            <th style="padding: 12px 10px; color: #1e1917;">Capability / Feature</th>
+            <th style="padding: 12px 10px; color: #1e1917;">Traditional White Cane</th>
+            <th style="padding: 12px 10px; color: #1e1917;">Smart Assisted Cane (Proposed)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #eaeaea;">
+            <td style="padding: 12px 10px; font-weight: 600;">Ground-Level Hazard Detection</td>
+            <td style="padding: 12px 10px;">High (Tactile contact)</td>
+            <td style="padding: 12px 10px;">High (Retains full mechanical tactile tip)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eaeaea;">
+            <td style="padding: 12px 10px; font-weight: 600;">Waist-to-Head Obstacle Detection</td>
+            <td style="padding: 12px 10px;">None (Vulnerable to upper-body impact)</td>
+            <td style="padding: 12px 10px; color: #9c7161; font-weight: 500;">Active multi-angle ultrasonic scanning</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eaeaea;">
+            <td style="padding: 12px 10px; font-weight: 600;">Advance Warning Distance</td>
+            <td style="padding: 12px 10px;">Immediate physical contact only (0 m)</td>
+            <td style="padding: 12px 10px;">Proactive early warning up to 2.5 meters</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eaeaea;">
+            <td style="padding: 12px 10px; font-weight: 600;">Feedback Mechanism</td>
+            <td style="padding: 12px 10px;">Mechanical resistance</td>
+            <td style="padding: 12px 10px;">Graduated haptic vibration motors & acoustic alerts</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 10px; font-weight: 600;">Urban Data & Connectivity</td>
+            <td style="padding: 12px 10px;">Offline standalone tool</td>
+            <td style="padding: 12px 10px;">Cloud-connected real-time obstacle mapping</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% load static %}
+
+<header style="font-family: system-ui, -apple-system, sans-serif;">
+  <!-- TOP BAR OSCURA -->
+  <div style="background-color: #2b231d; color: #eedccc; text-align: center; padding: 8px; font-size: 0.85rem;">
+    Health 4.0 Solution — Introduction to Biomedical Engineering (Group 09)
+  </div>
+
+  <!-- MAIN HEADER -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #ffffff; border-bottom: 1px solid #eaeaea;">
+    
+    <!-- LOGO -->
+    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #1e1917; gap: 10px;">
+       <img src="{% static 'img/logo.png' %}" alt="OrienTech Logo" style="height: 40px; object-fit: contain;">
+       <span style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: bold;">OrienTech</span>
+    </a>
+
+    <!-- NAVEGACIÓN Y ANIMACIÓN CSS -->
+    <nav>
+      <style>
+        .nav-link {
+          color: #3c3430;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.95rem;
+          padding: 8px 4px;
+          transition: color 0.3s ease;
+          position: relative;
+        }
+        
+        /* Color al pasar el ratón */
+        .nav-link:hover {
+          color: #b95d46;
+        }
+
+        /* Animación del subrayado */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          display: block;
+          margin-top: 5px;
+          left: 0;
+          background: #b95d46;
+          transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+        }
+      </style>
+
+      <ul style="display: flex; list-style: none; margin: 0; padding: 0; gap: 35px;">
+        <li><a href="/plantilla1/" class="nav-link">The Need</a></li>
+        <li><a href="/plantilla2/" class="nav-link">Architecture</a></li>
+        <li><a href="/plantilla3/" class="nav-link">Health 4.0</a></li>
+        <li><a href="/plantilla4/" class="nav-link">Feasibility</a></li>
+      </ul>
+    </nav>
+
+<!-- BOTÓN CONTACTO -->
+    <a href="/contacto/" style="background-color: #b95d46; color: white; text-decoration: none; padding: 12px 28px; border-radius: 30px; font-weight: 500; transition: background-color 0.3s ease, transform 0.2s ease; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(185, 93, 70, 0.2);" onmouseover="this.style.backgroundColor='#9c7161'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#b95d46'; this.style.transform='scale(1)';">
+      Request Quote
+    </a>
+    
+  </div>
+</header>

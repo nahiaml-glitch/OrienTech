@@ -1,0 +1,20 @@
+:root {
+  --bg-cream: #f4efeb;
+  --text-ink: #2b231d;
+  --accent-terracotta: #b75d3c;
+  --accent-hover: #9c4c2f;
+  --card-bg: #ece5df;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-ink);
+  font-family: 'Inter', sans-serif; /* Para texto normal */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; /* Típica fuente editorial */
+  font-weight: 600;
+}
