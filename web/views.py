@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import SolicitudContacto  # Añade esta línea arriba
 def home(request):
     """Página principal"""
     context = {
@@ -47,12 +47,13 @@ def contacto(request):
         nombre = request.POST.get('name')
         correo = request.POST.get('email')
         necesidades = request.POST.get('needs')
-        
-        print("=========================================")
-        print(f"NUEVA SOLICITUD DE: {nombre} ({correo})")
-        print(f"NECESIDADES: {necesidades}")
-        print("=========================================")
-        
+
+        # Guarda el registro en la base de datos
+        SolicitudContacto.objects.create(
+            nombre=nombre,
+            email=correo,
+            necesidades=necesidades
+        )
         enviado = True
 
     return render(request, 'contacto.html', {'enviado': enviado})
