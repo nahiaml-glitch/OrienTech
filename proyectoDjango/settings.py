@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ri5cy76l6!st__#ruc_@r+90@!6+ijxy--@0r_rkbpt3+@+t0!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://orientech.onrender.com']
 # Application definition
 
 INSTALLED_APPS = [
